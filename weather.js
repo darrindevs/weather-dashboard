@@ -1,6 +1,11 @@
+//* The current weather data API https://openweathermap.org/current
+//* The 5 day forecast API https://openweathermap.org/forecast5
+
 //* Access information from the Open Weather Map API to dynamically update the weather dashboard
     //* Get an API key from the website 
     //* Save our Open Weather API URL in a variable so that we can use it to make a GET request
+// add our API key 
+var APIKey = "&appid=ffcc56860b125b1a1bd5b141502db442";
     
 //* Create a form so that the user can input the name of a city and click a button to search for weather conditions for that city
     //* Add a search button
