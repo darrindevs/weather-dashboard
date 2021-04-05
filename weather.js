@@ -99,7 +99,11 @@ function searchFunction() {
         //* When they are clicked reload the results for that city
             //* Make a click event that makes a new GET resquest using the name of the city as variable passed in the request parameters
     
-    
+for (var i = 0; i < localStorage.length; i++){
+$(".output").append("<p class='cityresult'>" + localStorage.getItem(localStorage.key(i)) + "</p>");
+// add an href attribute
+               
+}
     
     
     
