@@ -92,6 +92,70 @@ $.ajax({
         //* Create a variable for each of the 5 days 
         //* Add each day's data to its own element in the HTML
 
+var requestURL5day = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + APIKey;
+
+$.ajax({
+    url: requestURL5day,
+    method: "GET"
+    })
+    .then(function(response) {
+    console.log(requestURL5day);
+    console.log("5 day forecast: " + response);
+        
+//Day 1
+// use dt_txt to retrieve our days and then reformat the date
+var day1 = moment(response.list[0].dt_txt).format("ddd, MMM D");
+console.log(moment(response.list[0].dt_txt).format("ddd, MMM D"));
+// Converts the temp to Kelvin with the below formula
+var temp1 = (response.list[0].main.temp - 273.15) * 1.80 + 32;
+        
+//Day 2
+var day2 = moment(response.list[8].dt_txt).format("ddd, MMM D");
+var temp2 = (response.list[8].main.temp - 273.15) * 1.80 + 32;
+//Day 3
+var day3 = moment(response.list[16].dt_txt).format("ddd, MMM D");
+var temp3 = (response.list[16].main.temp - 273.15) * 1.80 + 32;
+        
+//Day 4
+var day4 = moment(response.list[24].dt_txt).format("ddd, MMM D");
+var temp4 = (response.list[24].main.temp - 273.15) * 1.80 + 32;
+        
+//Day 5
+var day5 = moment(response.list[32].dt_txt).format("ddd, MMM D");
+var temp5 = (response.list[32].main.temp - 273.15) * 1.80 + 32;
+        
+        
+//Day 1
+$(".day-1-date").html("<h6>" + day1 + "</h6>");
+$(".day-1-icon").html("<img src='https://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' alt='Weather Icon'>");
+$(".day-1-temp").text("Temp: " + Math.round(temp1) + " °F");
+$(".day-1-humidity").text("Humidity: " + response.list[0].main.humidity + "%");
+        
+//Day 2
+$(".day-2-date").html("<h6>" + day2 + "</h6>");
+$(".day-2-icon").html("<img src='https://openweathermap.org/img/w/" + response.list[8].weather[0].icon + ".png' alt='Weather Icon'>");
+$(".day-2-temp").text("Temp: " + Math.round(temp2) + " °F");
+$(".day-2-humidity").text("Humidity: " + response.list[8].main.humidity + "%");
+        
+//Day 3
+$(".day-3-date").html("<h6>" + day3 + "</h6>");
+$(".day-3-icon").html("<img src='https://openweathermap.org/img/w/" + response.list[16].weather[0].icon + ".png' alt='Weather Icon'>");
+$(".day-3-temp").text("Temp: " + Math.round(temp3) + " °F");
+$(".day-3-humidity").text("Humidity: " + response.list[16].main.humidity + "%");
+        
+//Day 4
+$(".day-4-date").html("<h6>" + day4 + "</h6>");
+$(".day-4-icon").html("<img src='https://openweathermap.org/img/w/" + response.list[24].weather[0].icon + ".png' alt='Weather Icon'>");
+$(".day-4-temp").text("Temp: " + Math.round(temp4) + " °F");
+$(".day-4-humidity").text("Humidity: " + response.list[24].main.humidity + "%");
+        
+//Day 5
+$(".day-5-date").html("<h6>" + day5 + "</h6>");
+$(".day-5-icon").html("<img src='https://openweathermap.org/img/w/" + response.list[32].weather[0].icon + ".png' alt='Weather Icon'>");
+$(".day-5-temp").text("Temp: " + Math.round(temp5) + " °F");
+$(".day-5-humidity").text("Humidity: " + response.list[32].main.humidity + "%");
+        
+    });
 
 //* Add a search button
     //* The search triggers the GET request
@@ -106,7 +170,7 @@ searchButton.addEventListener("click", searchFunction);
     
     
 function searchFunction() {
-    localStorage.setItem("inputcontent-" + searchInput.value, searchInput.value);
+    localStorage.setItem("inputcontent" + searchInput.value, searchInput.value);
     localStorage.setItem("query", searchInput.value);
     console.log(lastresult);
     }
