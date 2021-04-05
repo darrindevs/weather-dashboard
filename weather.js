@@ -64,8 +64,25 @@ $(".temp").text("Temperature: " + Math.round(temp) + " °F");
 //* GET the UV index using the One Call API    
     //* requires latitude and longitude as query parameters
     //* create variables for latitude and longitude 
+var lon = response.coord.lon;
+var lat = response.coord.lon;
+var requestURLuv = "https://api.openweathermap.org/data/2.5/uvi?" + "lat=" + lat + "&lon=" + lon  + APIKey;
+    
+    
+$.ajax({
+    url: requestURLuv,
+    method: "GET"
+    })
 
-
+.then(function(response) {
+    console.log(requestURL);
+    console.log("UV: " + response);
+    //put the data in our markup targeting the element classes
+    $(".uv").text("UV Index: " + response.value);
+    $(".uv").css("color", "red");
+    
+    });
+    
 });
 
 //* GET the 5 day forecast
