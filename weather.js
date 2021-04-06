@@ -79,11 +79,10 @@ $.ajax({
     console.log("UV: " + response);
     //put the data in our markup targeting the element classes
     $(".uv").text("UV Index: " + response.value);
-    $(".uv").css("color", "red");
     
     });
-    
 });
+
 
 //* GET the 5 day forecast
     //* https://openweathermap.org/forecast5
@@ -158,7 +157,6 @@ $(".day-5-humidity").text("Humidity: " + response.list[32].main.humidity + "%");
     });
 
 //* Add a search button
-    //* The search triggers the GET request
     //* The search stores the search text in local storage
     //* When a news search is made the previous search is displayed in a clickable list 
 
@@ -181,14 +179,14 @@ function searchFunction() {
             //* Make a click event that makes a new GET resquest using the name of the city as variable passed in the request parameters
     
 for (var i = 0; i < localStorage.length; i++){
-$(".output").append("<p class='cityresult'>" + localStorage.getItem(localStorage.key(i)) + "</p>");
+$(".output").append("<a class='cityresult'>" + localStorage.getItem(localStorage.key(i)) + "</a><br/>");
 // add an href attribute
                
 }
     
-    
-    
-    
+
+
+
     
     
     

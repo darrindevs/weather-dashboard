@@ -48,9 +48,7 @@ $(".temp").text("Temperature: " + Math.round(temp) + " °F");
 ~~~
 
 
-## Note
-
-- placeholder text inspired by *50 Ways to Leave Your Lover* by Simon & Garfunkel
+## Notes
 
 
 ## Author Links
