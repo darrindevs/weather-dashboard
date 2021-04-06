@@ -1,3 +1,28 @@
 body {
-    background-color: aliceblue;
+    background-image: url("./assets/cloud.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Navbar */
+
+#nav-title {
+    margin-left: 10px;
+    color: black;
+}
+
+/* Buttons */
+
+/* Cards */
+
+.card {
+    margin-bottom: 10px;
+    border-color: black;
+}
+
+.badge-warning {
+    background-color: #f0ad4e;
+    color: black;
+    margin-left: 5px;
 }

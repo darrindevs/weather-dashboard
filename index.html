@@ -21,34 +21,34 @@
   <body>
 <!-- Add our code here 👇 -->
 <!-- Navbar -->
-<nav class="navbar navbar-light bg-light">
-    <span class="navbar-text"></span>
-        Weather Dashboard
-    </span>
+<nav class="navbar navbar-light bg-light d-flex justify-content-start ml-5">
+    <h3 id="nav-title" class="navbar-text">☀️ Weather Dashboard</h3>
 </nav>
 <!-- Main Container -->
-<div class="container-fluid">
+<div class="container-fluid px-5 py-5">
     <!-- Row 1-->
     <div class="row">
         <!-- Search -->
         <div class="col-md-3">
             <div class="card cities">
                 <div class="card-body">
-                    <p class="mb-3">Search by City:</p>
+                    <p class="mb-3"><strong>Search by City:</strong></p>
                     <!-- Form  -->
                     <form class="form-inline">
                         <input class="form-control input" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-primary search w-100 mt-3 mb-3" type="submit">
-                            <i class="fas fa-search mr-5"></i>Search
+                        <button class="btn btn-primary search w-100 mt-3 mb-3" type="submit">
+                            <i class="fas fa-search mr-5"></i><span class="ml-5">Search</span>
                         </button>
                     </form>
                     <!-- List of Previous Searches -->
-                    <div class="output"></div>
+                    <div class="output">
+                        <p>Search History</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Results =-->
-        <div class="col-md-9">
+        <!-- Results -->
+        <div class="col-md-6">
             <div class="row">
                 <!-- Current Date & Conditions-->
                 <div class="card current">
@@ -59,13 +59,13 @@
                         <p class="temp"></p>
                         <p class="humidity"></p>
                         <p class="wind"></p>
-                        <p class="uv"></p>
+                        <p class="uvp"><span class="uv badge badge-warning"></span></p>
                     </div>
                 </div>
             </div><!-- -->
             <!-- 5 Day Forecast-->
-            <div class="row">
-                <p>5 Day Forecast</p>
+            <div class="row mt-5">
+                <p id="5df"><strong>5 Day Forecast</strong></p>
                 <!-- Day 1 -->
                     <div class="col-md">
                         
