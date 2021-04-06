@@ -1,7 +1,7 @@
 # weather-dashboard
 
 
-<img src="" alt="Pic of application"
+<img src="https://zno.s3-us-west-1.amazonaws.com/weather-dashboard.png" alt="Pic of application"
 title="Weather Dashboard" width="" />
 
 ## Deployed Application
@@ -10,7 +10,7 @@ title="Weather Dashboard" width="" />
 ## Summary 
 Find out the weather in your favorite city!
 
-This browser based application leverages the OpenWeatherMap API to consume weather data based on user input. The user request updates the query parameters to return various weather data points for a selected city. The third-party API returns the data and our app uses JavaScript to dynamically insert the contents in the HTML. 
+This browser based application leverages the OpenWeatherMap API to consume weather data based on user input. The user request updates the query parameters to return various weather data points for a selected city. The third-party API returns the data and the app uses JavaScript to dynamically insert the contents in the HTML. 
 
 
 ## Technologies Used
@@ -46,9 +46,6 @@ $(".humidity").text("Humidity: " + response.main.humidity + "%");
 var temp = (response.main.temp - 273.15) * 1.80 + 32;
 $(".temp").text("Temperature: " + Math.round(temp) + " °F");
 ~~~
-
-
-## Notes
 
 
 ## Author Links
